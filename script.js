@@ -73,7 +73,15 @@ const buttons = document.querySelectorAll(".bt");
             const idName = button.id;
             const dig = button.textContent;
 
-            if(opFlag == 0 && !isNaN(idName[1]))
+            if(idName[1] == "c")
+            {
+                num1 = "";
+                num2 = "";
+                op = "";
+                opFlag = 0;
+                output.textContent = 0;
+            }
+            else if(opFlag == 0 && !isNaN(idName[1]))
             {
                 num1 += dig;
                 console.log(num1);
@@ -89,6 +97,9 @@ const buttons = document.querySelectorAll(".bt");
 
             else if(num2 == "" && (idName[1] == "+" || idName[1] == "-" || idName[1] == "x" || idName[1] == "%"))
             {
+                if(num1 == "")
+                num1 = 0;
+
                 opFlag = 1;
                 op = idName[1];
                 console.log(op);
