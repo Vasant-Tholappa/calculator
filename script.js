@@ -27,6 +27,9 @@ function divide(a,b)
     if(q === 0)
     return "error";
 
+    if(p%q === 0)
+    return p/q;
+    
     return (p/q).toFixed(2);
 }
 
